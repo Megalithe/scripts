@@ -2,9 +2,10 @@
 #chomd script 700 to allow the user to execute the script ./script
 
 # Credentials
-  Username=' '
-  Password=' '
-
+  ProxyAddress='Insert_ProxyAddress' # Proxy
+  Username='Insert_Username'         # Proxy Username
+  Password='Insert_Password'         # Proxy User Password
+  
 # System Settings
   # Commands - Full path to commands so alias's don't present an operational or security issue (which ___)
   echo="/bin/echo"
@@ -23,21 +24,24 @@
   TargetSite="$1"
     if [[ -z "$TargetSite" ]]; then
       TargetSite=$(echo "https://www.google.com")
-      echo -e  "${RED}No argument provided testing against google${NC}"
+      echo -e "${RED}No argument provided testing against google${NC}"
       echo -e "${PURPLE}To test against a specific site type: ./script.sh https://www.____.com${NC}"
     fi
-
+    
 ## Assign Diagnostic URLs as variables
-  WhatIsMyIPAddr=$(curl -s --proxy-user $Username:$Password -x http://_____.com:80 bot.whatismyipaddress.com; echo)
-  IPecho=$(curl -s --proxy-user $Username:$Password -x http://_____.com:80 ipecho.net/plain; echo)
-  Akamai=$(curl -s --proxy-user $Username:$Password -x http://_____.com:80 whatismyip.akamai.com; echo)
-  TargetSiteTest=$(curl -s -I --proxy-user $Username:$Password -x http://_____.com:80 $TargetSite; echo)
+  WhatIsMyIPAddr=$(curl -s --proxy-user $Username:$Password -x $ProxyAddress:80 bot.whatismyipaddress.com; echo)
+  IPecho=$(curl -s --proxy-user $Username:$Password -x $ProxyAddress:80 ipecho.net/plain; echo)
+  TargetSiteTest=$(curl -s -I --proxy-user $Username:$Password -x $ProxyAddress:80 $TargetSite; echo)
 
 # Test against IP sites:
   echo; echo -e "${CYAN}Starting Test:${NC}"
-  echo -e "${CYAN}Testing against IP validation sites${NC}"; echo
-  echo -e "${PURPLE}Test 1:${NC} $WhatIsMyIPAddr"
-  echo -e "${PURPLE}Test 2:${NC} $IPecho"
-  echo -e "${PURPLE}Test 3:${NC} $Akamai"; echo
+  echo -e "${CYAN}Testing against IP validat
+  
+  
+  
+  site${NC}"; echo
+  echo -e "${PURPLE}Public IP:${NC} $WhatIsMyIPAddr"
+  echo -e "${PURPLE}Proxy Public IPTest:${NC} $IPecho"
+  
   # Testing against user input or google if no input is provided:
   echo -e "${PURPLE}Test against Target site :${NC} $TargetSiteTest" | head -n 1; echo
