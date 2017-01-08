@@ -20,9 +20,9 @@
 
 # Assign targetsite as variable Optional
 # ./script.sh https://www.website.com
-  CustomerTargetSite="$1"
-    if [[ -z "$CustomerTargetSite" ]]; then
-      CustomerTargetSite=$(echo "https://www.google.com")
+  TargetSite="$1"
+    if [[ -z "$TargetSite" ]]; then
+      TargetSite=$(echo "https://www.google.com")
       echo -e  "${RED}No argument provided testing against google${NC}"
       echo -e "${PURPLE}To test against a specific site type: ./script.sh https://www.____.com${NC}"
     fi
