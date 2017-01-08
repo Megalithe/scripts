@@ -37,8 +37,6 @@
   echo; echo -e "${CYAN}Starting Test:${NC}"
   echo -e "${CYAN}Testing against IP validat
   
-  
-  
   site${NC}"; echo
   echo -e "${PURPLE}Public IP:${NC} $WhatIsMyIPAddr"
   echo -e "${PURPLE}Proxy Public IPTest:${NC} $IPecho"
