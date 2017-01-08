@@ -31,7 +31,7 @@
   WhatIsMyIPAddr=$(curl -s --proxy-user $Username:$Password -x http://_____.com:80 bot.whatismyipaddress.com; echo)
   IPecho=$(curl -s --proxy-user $Username:$Password -x http://_____.com:80 ipecho.net/plain; echo)
   Akamai=$(curl -s --proxy-user $Username:$Password -x http://_____.com:80 whatismyip.akamai.com; echo)
-  CustomerTargetSiteTest=$(curl -s -I --proxy-user $Username:$Password -x http://_____.com:80 $CustomerTargetSite; echo)
+  TargetSiteTest=$(curl -s -I --proxy-user $Username:$Password -x http://_____.com:80 $TargetSite; echo)
 
 # Test against IP sites:
   echo; echo -e "${CYAN}Starting Test:${NC}"
@@ -40,5 +40,4 @@
   echo -e "${PURPLE}Test 2:${NC} $IPecho"
   echo -e "${PURPLE}Test 3:${NC} $Akamai"; echo
   # Testing against user input or google if no input is provided:
-  echo -e "${PURPLE}Test against Target site :${NC} $CustomerTargetSiteTest" | head -n 1; echo
-
+  echo -e "${PURPLE}Test against Target site :${NC} $TargetSiteTest" | head -n 1; echo
